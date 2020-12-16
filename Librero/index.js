@@ -1,9 +1,16 @@
+var bee;  
+var x=10,y=29;
+var l=150,m=250;
+var px=0;   
+var ejex; 
 var sketchProc = function(processingInstance) {
     with (processingInstance) {
         size(400,400);
         fill(220, 0, 55);
         frameRate(30);
         background(255,255,255);
+background(0,0,0);
+    //this.img=bee;
         var book = [{
             title: "The Giver",
             stars: 3,
@@ -28,10 +35,9 @@ var sketchProc = function(processingInstance) {
         fill(173, 117, 33);
         rect(0, 120, width, 10);
         // dibuja el libro
-        var x=10,y=29;
+        /*var x=10,y=29;
         var l=150,m=250;
-        var px=0;
-                
+        var px=0;*/
         //ciclo para escribir sobre las portadas
         for(var op=0;op<book.length;op++){
             //eliminé un for y ahora se dibujan las portadas     al mismo tiempo que se escribé sobre ella.
@@ -46,10 +52,18 @@ var sketchProc = function(processingInstance) {
             text(book[op].genero,px+15,y+55,70,100);
             //ciclo que imprime las estrellas
             for (var i = 0; i < book[op].stars; i++) {
-
+                //text("*",110,90,20,30);
                 //image(getImage("cute/Star"), px+15 + i*20, 90,20,30);
+                function drawAfter(pro, callback){
+                    bee = pro.loadImage("estrellas.png");
+                    //bee = pro.loadImage("./img/estrellas.jpg");
+                    setTimeout(() => {
+                        callback(bee, 200, 100, 40, 40)
+                    }, 500);
+                    drawAfter(processingInstance, image);
+                }
             }
-            px=px+110;
+            px=px+110;            
         }    
     }};
         // Get the canvas that Processing-js will use
