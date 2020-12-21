@@ -1,28 +1,61 @@
-header h2{
-    margin-top: 0%;
-    color:white;
-    padding: inherit;
-    background-color:#0a2a66;
-    font-family: cursive;
-    justify-content: space-around;
-    display: flex;
+@import url(./banner.css);
+@import url(./vinculos.css);
+*{
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Open sans', sans-serif;
+    transition-duration: 1s;
+}
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color:rgb(255, 255, 255);
+    transition-duration: 1s;
+    text-align: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+}
+.contenedor{
+    transition-duration: 2s;
+    width: 98%;
+    margin: auto;
+}
+section{
+    width: 100%;
+    margin-bottom: 25px;
+}
+#Presentacion{
+    transition-duration: 1s;
+    color: rgb(52, 58, 63);
     text-align: center;
 }
-header h3{
-    font-size: 28px;
+#Presentacion p{
+    color: rgb(52, 58, 63);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+footer .contenedor{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.copy{
+    font-size: 20px;
+}
+.sociales{
+    width: 100%;
     text-align: center;
+    font-size: 16px;
 }
-h4 {
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 40px;
-}
-li {
-    margin:7px;
-    font-size: 22px;
-    color:cornflowerblue;
-}
-a {  
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-    color:rgb(35, 22, 219);
+@media (min-width:1024){
+    .contenedor{
+        width: 1000px;
+    }
 }
