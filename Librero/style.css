@@ -15,9 +15,16 @@ header h3{
 h4 {
     font-family: 'Times New Roman', Times, serif;
     margin-left: 40px;
+    margin-right: 40px;
+}
+img{
+    display: none;
 }
 canvas {
-    width: 400px;
+    /*width: 960px;
+    height: 400px;
+    background: #CCF7FF;*/
+
     border: 5px solid #0a2a66;
     padding: 10px;
 }

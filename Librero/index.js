@@ -1,72 +1,59 @@
-var bee;  
-var x=10,y=29;
-var l=150,m=250;
-var px=0;   
-var ejex; 
-var sketchProc = function(processingInstance) {
-    with (processingInstance) {
-        size(400,400);
-        fill(220, 0, 55);
-        frameRate(30);
-        background(255,255,255);
-background(0,0,0);
-    //this.img=bee;
-        var book = [{
-            title: "The Giver",
-            stars: 3,
-            autor: "Lous Lowry",
-            genero: "Novela"
-        },
-        {
-            title: "La iliada",
-            stars: 4,
-            autor: "Homero",
-            genero: "poseia"
-        },
-        {
-            title: "Macario",
-            stars: 4,
-            autor: "B. Traven",
-            genero: "Ficcion"
-        }
-        ];
+var ctx,canvas;
+var img=document.getElementById("img");
+window.onload=function(){
+    canvas=document.getElementById("micanvas");
+    ctx= canvas.getContext("2d");
+    var book = [{
+        title: "The Giver",
+        stars: 3,
+        autor: "Lous Lowry",
+        genero: "Novela"
+    },
+    {
+        title: "La iliada",
+        stars: 4,
+        autor: "Homero",
+        genero: "poseia"
+    },
+    {
+        title: "Macario",
+        stars: 3,
+        autor: "B. Traven",
+        genero: "Ficcion"
+    },
+    {
+        title: "Hamlet",
+        stars: 4,
+        autor: "Wiliam Sh.",
+        genero: "Poesia"
+    },
+    {
+        title: "Orgullo y P.",
+        stars: 2,
+        autor: "Jane Austen",
+        genero: "Sátira"
+    }
+    ];
+    ctx.fillStyle="#AD7521";
+    ctx.fillRect(0, 180, canvas.width, 10);
+    var x=10,y=30;
+    var l=96,m=32;
+    var px=0;
+    for(var op=0;op<book.length;op++){
+        ctx.fillStyle="#"+l,m,m;
+        ctx.fillRect(x,50,100,130);
+        l+=50;
+        m-=30;
+        x+=110;
+        ctx.fillStyle="#000000";
+        ctx.font = "16px Cursive";
         
-        // dibuja el librero
-        fill(173, 117, 33);
-        rect(0, 120, width, 10);
-        // dibuja el libro
-        /*var x=10,y=29;
-        var l=150,m=250;
-        var px=0;*/
-        //ciclo para escribir sobre las portadas
-        for(var op=0;op<book.length;op++){
-            //eliminé un for y ahora se dibujan las portadas     al mismo tiempo que se escribé sobre ella.
-            fill(l,m,m);
-            rect(x,20,90,100);
-            l+=50;
-            m-=30;
-            x+=110;
-            fill(0, 0, 0);
-            text(book[op].title, px+15, 29, 70, 100);
-            text(book[op].autor,px+15,y+30,70,100);
-            text(book[op].genero,px+15,y+55,70,100);
-            //ciclo que imprime las estrellas
-            for (var i = 0; i < book[op].stars; i++) {
-                //text("*",110,90,20,30);
-                //image(getImage("cute/Star"), px+15 + i*20, 90,20,30);
-                function drawAfter(pro, callback){
-                    bee = pro.loadImage("estrellas.png");
-                    //bee = pro.loadImage("./img/estrellas.jpg");
-                    setTimeout(() => {
-                        callback(bee, 200, 100, 40, 40)
-                    }, 500);
-                    drawAfter(processingInstance, image);
-                }
-            }
-            px=px+110;            
-        }    
-    }};
-        // Get the canvas that Processing-js will use
-        var canvas = document.getElementById("mycanvas"); 
-        // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
-        var processing = new Processing(canvas, sketchProc);
+        ctx.fillText(book[op].title, px+20, y+56);
+        ctx.fillText(book[op].autor,px+15,y+80);
+        ctx.fillText(book[op].genero,px+20,y+105);
+        for (var i = 0; i < book[op].stars; i++) {
+            ctx.drawImage(img, px+15 + i*20, 150,20,20);
+        }
+        px=px+110;
+    }
+}
