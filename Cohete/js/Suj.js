@@ -9,22 +9,27 @@ const Suj= function(x,y,ctx){
     this.ticks=0;
     this.spriteIndex=0;
     this.sprites = document.getElementById('im1');
-    var self = this;
+    var self = this;    
     window.addEventListener('keydown',function(e){
         if(e.keyCode===32 && !self.caida){
             self.velY=-16;
             console.log('spacebar');
         }        
-    });
+    });    
 };
 Suj.prototype.update = function(tubos){
     this.y+=this.velY;
-    this.velY+=1.25;
+    this.velY+=1.25;    
     //this.choque(tubos);
     if(this.choque(tubos)){
         this.caida=true;
     }
-
+    if(this.y<0){
+        this.y=0;
+    }
+    if(this.y>innerHeight){
+        this.y=innerHeight;
+    }    
 };
 Suj.prototype.render=function(){
     let renderX=this.x-this.width/2;
@@ -59,10 +64,5 @@ Suj.prototype.choque=function(tubos){
     }
     return false;
 };
-function puntos(){
-    let score=0;
-    if(!this.choque(tubos)){
-        score++;
-    }
-    return score;
+function lim(){               
 }

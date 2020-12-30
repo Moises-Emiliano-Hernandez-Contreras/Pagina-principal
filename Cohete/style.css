@@ -18,6 +18,7 @@ h4 {
 }
 canvas {
     width: 600px;
+    height: 500px;
     border: 5px solid #0a2a66;
     padding: 10px;
 }

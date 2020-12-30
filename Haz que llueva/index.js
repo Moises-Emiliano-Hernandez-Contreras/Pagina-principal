@@ -23,7 +23,7 @@ draw = function() {
         }
         
     }
-    if(mouseIsPressed){
+    if(canvas.onClick()){
         xPositions.push(random(0,400));
         yPositions.push(random(0,400));
         }

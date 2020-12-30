@@ -2,7 +2,7 @@ var sketchProc = function(processingInstance) {
     with (processingInstance) {
         size(400,400);
         fill(220, 0, 55);
-        frameRate(30);
+        frameRate(120);
         background(255,255,255);
         background(186, 145, 20); // wooden table
 var xPos = 0;

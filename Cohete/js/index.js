@@ -1,4 +1,3 @@
-
         var score=0;
         window.onload = function(){
             const c = document.getElementById('canvas');
@@ -52,9 +51,9 @@
             ctx.fillText("¡¡¡Juego Terminado!!! ",c.width/2,c.height/2);
             ctx.fillText("PUNTOS: "+score,c.width/2,(c.height/2)+100);
             //ctx.font="30px Verdana";
-        };
-        /*function Puntos(ctx,c){
-            ctx.font="30px Verdana";
-            //ctx.textAlign="center";
-            ctx.fillText(sujeto.Puntos(),(c.width/2)+300,c.height/2);
-        };*/
+        };        
+        function reniciar(){
+            //gameloop();
+            window.onload();
+            score=0;
+        }

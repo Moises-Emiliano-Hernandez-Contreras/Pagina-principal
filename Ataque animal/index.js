@@ -1,6 +1,6 @@
 var sketchProc = function(processingInstance) {
     with (processingInstance) {
-        size(400,400);
+        size(600,600);
         fill(220, 0, 55);
         frameRate(30);
         background(255,255,255);
