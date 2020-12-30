@@ -1,6 +1,6 @@
 
+        var score=0;
         window.onload = function(){
-            let score=0;
             const c = document.getElementById('canvas');
             c.width = innerWidth;
             c.height = innerHeight;
@@ -31,9 +31,9 @@
                     return;
                 }else{
                     console.log("Pasa");
-                    ctx.font="60, Verdana";
+                    ctx.font="30px Verdana";
                     ctx.textAlign="center";
-                    ctx.fillText("PUNTOS: "+score++,c.width-350,c.height/2);
+                    ctx.fillText("PUNTOS: "+score++,c.width-400/2,c.height-600);
                 }
                 window.requestAnimationFrame(gameloop);
             }
@@ -47,15 +47,14 @@
             return valores;
         };
         function drawGameOver(ctx,c){
-            ctx.font="30px Verdana";
+            ctx.font="60px Verdana";
             ctx.textAlign="center";
-            ctx.fillText("¡¡¡Juego Terminado!!!",c.width/2,c.height/2);
-            ctx.font="60, Verdana";
-            ctx.textAlign="center";
-            ctx.fillText(score,c.width,c.height/2);
+            ctx.fillText("¡¡¡Juego Terminado!!! ",c.width/2,c.height/2);
+            ctx.fillText("PUNTOS: "+score,c.width/2,(c.height/2)+100);
+            //ctx.font="30px Verdana";
         };
-        function Puntos(ctx,c){
+        /*function Puntos(ctx,c){
             ctx.font="30px Verdana";
-            ctx.textAlign="center";
+            //ctx.textAlign="center";
             ctx.fillText(sujeto.Puntos(),(c.width/2)+300,c.height/2);
-        };
+        };*/
