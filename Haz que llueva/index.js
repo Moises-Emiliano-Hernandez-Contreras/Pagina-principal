@@ -26,12 +26,7 @@ for(var i=0;i<20;i++){
             yPositions[i]=0;
         }
         
-    }
-    window.addEventListener('click',function(e){
-            xPositions.push(random(0,400));
-            yPositions.push(random(0,400));
-            console.log('spacebar');
-    });
+    };
         window.requestAnimationFrame(gameloop);
     }
     }};
