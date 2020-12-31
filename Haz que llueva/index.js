@@ -6,7 +6,7 @@ var sketchProc = function(processingInstance) {
         fill(220, 0, 55);
         frameRate(60);
         background(255,255,255);
-for(var i=0;i<30;i++){
+for(var i=0;i<50;i++){
     xPositions.push(random(0,400));
     yPositions.push(random(0,400));
 }
