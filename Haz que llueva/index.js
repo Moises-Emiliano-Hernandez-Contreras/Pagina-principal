@@ -26,7 +26,7 @@ for(var i=0;i<20;i++){
             yPositions[i]=0;
         }
         
-    };
+    }
         window.requestAnimationFrame(gameloop);
     }
     }};
