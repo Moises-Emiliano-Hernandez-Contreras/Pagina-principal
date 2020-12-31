@@ -12,9 +12,9 @@ Tubo.prototype.update= function(){
 Tubo.prototype.render = function(){
     //this.ctx.save();
     this.ctx.fillStyle = "#000000";
-    this.ctx.fillRect(this.xpos,this.ypos,this.width,this.length-20); 
-    this.ctx.fillStyle = "#572364";
-    this.ctx.fillRect(this.xpos+5,this.ypos+5,this.width-10,this.length-10); 
+    this.ctx.fillRect(this.xpos+5,this.ypos+5,this.width-60,this.length-5); 
+    this.ctx.fillStyle = "#594700";
+    this.ctx.fillRect(this.xpos+5,this.ypos+5,this.width-70,this.length-5); 
     this.ctx.fillStyle="#FFFFFF";
 };
 //const Tubo = function(ypos,xpos,le)
